@@ -1,0 +1,84 @@
+---
+title: "Integrate Lark authentication"
+---
+
+## About Lark
+
+**Lark** authentication is an identity verification mechanism provided by Lark (the international version of Feishu), enabling enterprises and third-party applications to authenticate and authorize users through Lark. 
+
+## How to configure
+
+<Steps>
+
+<Step>
+<Nav name="system-settings" />
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > Lark**.
+</Step>
+
+<Step>
+In the **Lark** field, check to enable Lark authentication.
+</Step>
+
+<Step>
+In the **App ID** field, type the Lark app ID, a unique identifier for the application.
+</Step>
+
+<Step>
+In the **App secret** field, type the Lark app secret, used to obtain an access token for calling the Lark API.
+</Step>
+
+<Step>
+In the **User attribute** field, type the user attribute mapping. The key represents the JumpServer user attribute name (available options: name, username, email, phone, comment), while the value corresponds to the Lark user attribute name.
+```json copy=true filename="Lark User Attribute Example"
+{
+  "name": "nickname",
+  "username": "user_id",
+  "email": "email"
+}
+```
+</Step>
+
+<Step>
+In the **Organization** field, after authentication and creation, the user will be added to the selected organization.
+</Step>
+
+<Step>
+Click **Submit**.
+</Step>
+
+</Steps>
+
+## Test Lark connection
+
+<Steps>
+
+<Step>
+<Nav name="system-settings" />
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > Lark**.
+</Step>
+
+<Step>
+Scroll to the bottom of the page.
+</Step>
+
+<Step>
+Click **Test**.
+</Step>
+
+</Steps>
+
+## JumpServer Lark URLs
+
+```md filename="QR Login URL"
+https://jumpserver.example.com/core/auth/lark/qr/login/
+```
+
+```md filename="QR Login Success Callback URL"
+https://jumpserver.example.com/core/auth/lark/qr/login/callback/
+```

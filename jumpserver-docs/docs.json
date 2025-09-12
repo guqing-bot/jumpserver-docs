@@ -1,0 +1,192 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "JumpServer Documentation",
+  "theme": "mint",
+  "logo": {
+    "dark": "/images/jumpserver-wordmark-dark.svg",
+    "light": "/images/jumpserver-wordmark-light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#148f76",
+    "light": "#5ec8ad",
+    "dark": "#63ccb1"
+  },
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://jumpserver.org"
+  },
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/W6vYXk9eXS"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/jumpserver/jumpserver"
+    }
+  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "index",
+              "quickstart", 
+              "installation",
+              "upgrade"
+            ]
+          },
+          {
+            "group": "Admin Guides", 
+            "pages": [
+              {
+                "group": "Users Management",
+                "pages": [
+                  "users/create-user",
+                  "users/edit-user", 
+                  "users/delete-users",
+                  "users/enable-disable-users",
+                  "users/invite-remove-users",
+                  "users/reset-password",
+                  "users/reset-ssh-key", 
+                  "users/reset-mfa",
+                  "users/unlock-user",
+                  "users/user-parameter-reference"
+                ]
+              },
+              {
+                "group": "Assets Management",
+                "pages": [
+                  "assets/create-web"
+                ]
+              },
+              {
+                "group": "Import & Export", 
+                "pages": [
+                  "import-export/general-guide",
+                  "import-export/users"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "PAM Guides",
+            "pages": [
+              {
+                "group": "Account Discovery",
+                "pages": [
+                  "discover-accounts/create-discovery-task"
+                ]
+              },
+              {
+                "group": "Account Management",
+                "pages": [
+                  "push-accounts/create-push-task",
+                  "backup-accounts/create-backup-task", 
+                  "change-secrets/create-change-secret-task"
+                ]
+              },
+              {
+                "group": "Security & Risk",
+                "pages": [
+                  "risk-detection/create-risk-detection-task"
+                ]
+              },
+              {
+                "group": "Applications",
+                "pages": [
+                  "applications/create-application",
+                  "applications/view-integration-docs"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "System Settings",
+            "pages": [
+              {
+                "group": "Notifications",
+                "pages": [
+                  "notifications/email"
+                ]
+              },
+              {
+                "group": "Authentication",
+                "pages": [
+                  "authentication/basic",
+                  "authentication/ldap",
+                  "authentication/ldap-ha", 
+                  "authentication/cas",
+                  "authentication/oidc",
+                  "authentication/oauth2",
+                  "authentication/saml2",
+                  "authentication/radius",
+                  "authentication/passkey",
+                  "authentication/dingtalk",
+                  "authentication/feishu",
+                  "authentication/lark",
+                  "authentication/wecom",
+                  "authentication/slack"
+                ]
+              },
+              {
+                "group": "Remote Applications",
+                "pages": [
+                  "remoteapp/remote-app",
+                  "remoteapp/remoteapp-machine",
+                  "remoteapp/virtualapp"
+                ]
+              },
+              {
+                "group": "Security",
+                "pages": [
+                  "security/auth-security"
+                ]
+              },
+              {
+                "group": "License",
+                "pages": [
+                  "license"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration",
+              "enable-https"
+            ]
+          },
+          {
+            "group": "Troubleshooting", 
+            "pages": [
+              "troubleshooting/no-connection-methods"
+            ]
+          },
+          {
+            "group": "More",
+            "pages": [
+              "compare-versions",
+              "changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "footerSocials": {
+    "github": "https://github.com/jumpserver/jumpserver",
+    "discord": "https://discord.gg/W6vYXk9eXS",
+    "website": "https://jumpserver.org"
+  }
+}

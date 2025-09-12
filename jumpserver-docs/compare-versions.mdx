@@ -1,0 +1,85 @@
+---
+title: "JumpServer CE vs EE"
+description: "Feature comparison between JumpServer Community Edition and Enterprise Edition"
+---
+
+This topic describes the feature comparison between the JumpServer open-source edition (JumpServer CE) and the enterprise edition (JumpServer EE).
+
+
+
+### Resource & Access Management
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={ResourceManagement.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
+
+### User Authentication Methods
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={UserAuthentication.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
+
+### Available Asset Types
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={AssetType.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
+
+### Asset Connection Methods
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={AssetConnectionMethod.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
+
+### Access Control Policies (ACLs)
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={ACLsManagement.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
+
+### Audit & Monitoring Capabilities
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={AuditManagement.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
+
+### Additional Features & Integrations
+
+<CompareVersionsDataTable
+  headers={['Feature', 'JumpServer CE', 'JumpServer EE']}
+  rows={OtherFeatures.map((row) => [
+    { content: row['feature'] },
+    { content: row['ce'] === false ? <Icon icon="x" /> : <Icon icon="check" /> },
+    { content: <Icon icon="check" /> },
+  ])}
+/>
