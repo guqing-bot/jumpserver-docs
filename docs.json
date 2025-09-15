@@ -1,0 +1,212 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "JumpServer Documentation",
+  "theme": "mint",
+  "logo": {
+    "dark": "/images/jumpserver-wordmark-dark.svg",
+    "light": "/images/jumpserver-wordmark-light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#148f76",
+    "light": "#5ec8ad",
+    "dark": "#63ccb1"
+  },
+  "navigation": {
+    "global":  {
+      "anchors": [
+        {
+          "anchor": "Discord",
+          "icon": "discord",
+          "href": "https://discord.gg/W6vYXmAQG2"
+        },
+        {
+          "anchor": "GitHub",
+          "icon": "github",
+          "href": "https://github.com/jumpserver/jumpserver"
+        },
+        {
+          "anchor": "Twitter",
+          "icon": "twitter",
+          "href": "https://x.com/lxware_x"
+        },
+        {
+          "anchor": "DeepWiki",
+          "icon": "https://deepwiki.com/favicon.ico",
+          "href": "https://deepwiki.com/jumpserver/jumpserver"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart", 
+              "installation",
+              "upgrade"
+            ]
+          },
+          {
+            "group": "Admin Guides", 
+            "pages": [
+              {
+                "group": "Users Management",
+                "pages": [
+                  "users/create-user",
+                  "users/edit-user", 
+                  "users/delete-users",
+                  "users/enable-disable-users",
+                  "users/invite-remove-users",
+                  "users/unlock-user",
+                  "users/reset-password",
+                  "users/reset-ssh-key", 
+                  "users/reset-mfa",
+                  "users/user-parameter-reference"
+                ]
+              },
+              {
+                "group": "Assets Management",
+                "pages": [
+                  "assets/create-web"
+                ]
+              },
+              {
+                "group": "Import & Export", 
+                "pages": [
+                  "import-export/general-guide",
+                  "import-export/users"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "PAM Guides",
+            "pages": [
+              {
+                "group": "Account Discovery",
+                "pages": [
+                  "discover-accounts/create-discovery-task"
+                ]
+              },
+              {
+                "group": "Account Management",
+                "pages": [
+                  "push-accounts/create-push-task",
+                  "backup-accounts/create-backup-task", 
+                  "change-secrets/create-change-secret-task"
+                ]
+              },
+              {
+                "group": "Security & Risk",
+                "pages": [
+                  "risk-detection/create-risk-detection-task"
+                ]
+              },
+              {
+                "group": "Applications",
+                "pages": [
+                  "applications/create-application",
+                  "applications/view-integration-docs"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "System Settings",
+            "pages": [
+              {
+                "group": "Notifications",
+                "pages": [
+                  "notifications/email"
+                ]
+              },
+              {
+                "group": "Authentication",
+                "pages": [
+                  "authentication/basic",
+                  "authentication/ldap",
+                  "authentication/ldap-ha", 
+                  "authentication/cas",
+                  "authentication/oidc",
+                  "authentication/oauth2",
+                  "authentication/saml2",
+                  "authentication/radius",
+                  "authentication/passkey",
+                  "authentication/dingtalk",
+                  "authentication/feishu",
+                  "authentication/lark",
+                  "authentication/wecom",
+                  "authentication/slack"
+                ]
+              },
+              {
+                "group": "Remote Applications",
+                "pages": [
+                  "remoteapp/remote-app",
+                  "remoteapp/remoteapp-machine",
+                  "remoteapp/virtualapp"
+                ]
+              },
+              {
+                "group": "Security",
+                "pages": [
+                  "security/auth-security"
+                ]
+              },
+              {
+                "group": "License",
+                "pages": [
+                  "license"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration",
+              "enable-https"
+            ]
+          },
+          {
+            "group": "Enterprise Edition",
+            "pages": [
+              "compare-versions"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "history",
+        "pages": [
+          "changelog"
+        ]
+      }
+    ]
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "seo": {
+    "indexing": "all",
+    "metatags": {
+      "og:type": "website",
+      "og:title": "JumpServer",
+      "og:site_name": "JumpServer",
+      "og:description": "An open-source PAM platform (Bastion Host)"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/lxware_x",
+      "github": "https://github.com/jumpserver/jumpserver",
+      "discord": "https://discord.com/invite/W6vYXmAQG2"
+    }
+  }
+}

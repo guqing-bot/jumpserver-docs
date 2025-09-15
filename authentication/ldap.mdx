@@ -1,0 +1,236 @@
+---
+title: "Integrate LDAP"
+---
+
+## About LDAP
+**Lightweight Directory Access Protocol (LDAP)** is an open protocol used for accessing and managing distributed directory information. It is commonly used for centralized authentication and directory services, such as storing user accounts, permissions, and organizational structure information. LDAP is widely applied in enterprise identity management, single sign-on (SSO), and access control systems.
+
+**Distinguished Name (DN)** is unique identifier for each entry in an LDAP directory, similar to a file path in a filesystem, such as "cn=admin,ou=Users,dc=example,dc=com".
+
+**Organizational Unit (OU)** is used to organize and manage objects in an LDAP directory, similar to folders in a file system. For example, an organization may have multiple OUs "ou=HR" and "ou=IT", to distinguish users and resources of different departments.
+
+## How to configure
+
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > LDAP**.
+</Step>
+
+<Step>
+In the **LDAP** field, check to enable LDAP authentication.
+</Step>
+
+<Step>
+In the **Server** field, type the LDAP server URI, such as "ldap://example.com:389" and "ldaps://example.com:636". 
+
+<Note>
+To configure LDAP TLS certificates, you can upload the files "ldap_ca.pem, ldap_cert.pem, ldap_cert.key" to the directory "/data/jumpserver/core/data/certs", then restart the service.
+</Note>
+</Step>
+
+<Step>
+In the **Bind DN** field, type a user DN with at least query permissions, which will be used to query and filter users, such as "cn=admin,dc=example,dc=com".
+</Step>
+
+<Step>
+In the **Password** field, type the password for the "Bind DN" user.
+</Step>
+
+<Step>
+In the **Search OU** field, type the search OU to specify where to start searching for users, use `|` to separate multiple values, such as "ou=users,dc=example,dc=com | ou=tech,dc=example,dc=com".
+</Step>
+
+<Step>
+In the **Search filter** field, type the filter expression to search for LDAP users. By default, the expression is "(cn=%(user)s)", where "%(user)s" is the placeholder syntax in Python. During filtering, it is replaced with `*`, resulting in "(cn=\*)", which searches for all users. You can also replace "cn" with the actual username field, such as "uid" or "sAMAccountName".
+
+</Step>
+
+<Step>
+In the **User attribute** field, type the user attribute mapping. The key represents the JumpServer user attribute name (available options: name, username, email, is_active, groups, phone, comment), while the value corresponds to the LDAP user attribute name.
+
+```json LDAP User Attribute Example
+{
+  "name": "cn",
+  "email": "mail",
+  "username": "cn",
+  "is_active": "useraccountcontrol",
+  "groups": "memberOf"
+}
+```
+</Step>
+
+<Step>
+In the **Connect timeout (s)** field, type the LDAP connection timeout in seconds.
+</Step>
+
+<Step>
+In the **Search paged size (piece)** field, type the page size for searching users.
+</Step>
+
+<Step>
+In the **User DN cache timeout (s)** field, type the cache duration for user DN in seconds to improve login authentication speed. Submit the form to clear the cache if the user DN is changed, otherwise, authentication will fail.
+</Step>
+
+<Step>
+Click **Submit**.
+</Step>
+
+</Steps>
+
+## Test LDAP connection
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > LDAP**.
+</Step>
+
+<Step>
+Scroll to the bottom of the page.
+</Step>
+
+<Step>
+Click **Test connection**.
+</Step>
+
+</Steps>
+
+## Test LDAP user login
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > LDAP**.
+</Step>
+
+<Step>
+Completed and tested LDAP configuration successfully.
+</Step>
+
+<Step>
+Scroll to the bottom of the page.
+</Step>
+
+<Step>
+Click **Test login**.
+</Step>
+
+<Step>
+In the pop-up window, type the username and password for LDAP user.
+</Step>
+
+<Step>
+Click **Confirm**.
+</Step>
+
+</Steps>
+
+## Import LDAP users
+
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > LDAP**.
+</Step>
+
+<Step>
+Completed and tested LDAP configuration successfully.
+</Step>
+
+<Step>
+Scroll to the bottom of the page.
+</Step>
+
+<Step>
+Click **User import**.
+</Step>
+
+<Step>
+In the pop-up window, you can import LDAP users in the following ways.
+  
+  1. Click **Sync Users** to sync LDAP users to the table.
+  2. <Icon icon="crown" color="#eab308"/> In the **Import organization** field, select one or more organizations to import.
+  3. Check the users you want to import, click **Import** to proceed.
+  4. Alternatively, you can click **Import all** to import all users.
+
+  <Frame>
+<img src="/images/docs/admin-guides/system-settings/auth/ldap-import-user.png" alt="image" width="650"/>
+</Frame>
+
+</Step>
+
+</Steps>
+
+##  Set up LDAP user sync
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+Navigate to the **System settings > Authentication > LDAP**.
+</Step>
+
+<Step>
+Completed and tested LDAP configuration successfully.
+</Step>
+
+<Step>
+Scroll to the bottom of the page.
+</Step>
+
+<Step>
+Click **Sync settings**.
+</Step>
+
+<Step>
+In the pop-up window, type the following information to configure.
+  1. <Icon icon="crown" color="#eab308"/> In the **Organization** field, Select one or more organizations to sync. 
+  2. In the **Periodic** field, check to enable periodic sync.
+  3. In the **Crontab** field, type the crontab expression. If empty, "Interval" will be used.
+  4. In the **Interval** field, type the sync interval in hours. 
+  5. However, if "Crontab" has a value, "Crontab" will take priority.
+  6. In the **Recipients** fields, select one or more users to receive the sync result.
+  7. Click **Confirm**.
+
+  <Frame>
+<img src="/images/docs/admin-guides/system-settings/auth/ldap-sync-settings.png" alt="image" width="550"/>
+</Frame>
+</Step>
+</Steps>

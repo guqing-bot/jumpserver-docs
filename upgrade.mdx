@@ -1,0 +1,138 @@
+---
+title: "Upgrade"
+---
+
+This topic describes how to upgrade JumpServer, including both the open-source and enterprise editions.
+
+<Note>
+We recommend upgrading JumpServer regularly to access the latest designs and features.
+</Note>
+
+## Upgrade for one-line installation
+
+If you have installed JumpServer using the [Install with a one-line command](/docs/installation#install-with-a-one-line-command) guide, you can upgrade JumpServer by running the following steps.
+
+<Steps>
+
+<Step>
+Log in to the JumpServer deployment server using the "root" or another user with superuser privileges.
+</Step>
+
+<Step>
+Change to the `/opt` directory.
+</Step>
+
+<Step>
+Download the latest installation package.
+```sh
+wget https://github.com/jumpserver/installer/releases/download/v4.10.7/jumpserver-installer-v4.10.7.tar.gz
+```
+</Step>
+
+<Step>
+Extract the installation package.
+```sh
+tar -zxvf jumpserver-installer-v4.10.7.tar.gz
+```
+</Step>
+
+<Step>
+Change to the extracted directory.
+```sh
+cd jumpserver-installer-v4.10.7
+```
+</Step>
+
+<Step>
+Perform the upgrade.
+```sh
+./jmsctl.sh upgrade
+```
+</Step>
+
+<Step>
+Start all services.
+```sh
+./jmsctl.sh start
+```
+</Step>
+
+<Step>
+At this point, you have successfully upgraded JumpServer.
+</Step>
+
+</Steps>
+
+## Upgrade for offline installation
+
+If you have installed JumpServer using the [Install with an offline package](/docs/installation#install-with-an-offline-package) guide, you can upgrade JumpServer by running the following steps.
+
+<Steps>
+
+<Step>
+Log in to the JumpServer deployment server using the "root" or another user with superuser privileges.
+</Step>
+
+<Step>
+Change to the `/opt` directory.
+</Step>
+
+<Step>
+Download the JumpServer Enterprise offline installation package.
+
+<Tabs>
+  <Tab title="web">
+    1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
+    2. Click filename to download the offline installation package for the required version.
+    3. Upload the offline installation package to the `/opt` directory on the deployment server.
+  </Tab>
+
+  <Tab title="wget">
+    1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
+    2. Right-click filename and select "Copy link address" to copy the download link for the required version of the offline installation package.
+    3. Replace the download link and run the following command to download the offline installation package.
+    ```sh
+    cd /opt && wget --user={username} --password={password} -O jumpserver-ee-v4.10.7-x86_64.tar.gz "https://download-pkgs.jumpserver.com/download?file=jumpserver-ee-v4.10.7-x86_64.tar.gz"
+    ```
+    <Note>
+    Replace `{username}` and `{password}` with the actual username and password provided by the support team.
+    </Note>
+  </Tab>
+</Tabs>
+
+</Step>
+<Step>
+Extract the installation package.
+```sh 
+tar -zxvf jumpserver-ee-v4.10.7-x86_64.tar.gz
+```
+</Step>
+
+<Step>
+Change to the extracted directory.
+```sh
+cd jumpserver-ee-v4.10.7-x86_64
+```
+</Step>
+
+<Step>
+Perform the upgrade, the upgrade process can be completed using all default options.
+
+```sh
+./jmsctl.sh upgrade
+```
+
+</Step>
+
+<Step>
+Start all services.
+```sh
+./jmsctl.sh start
+```
+</Step>
+
+<Step>
+At this point, you have successfully upgraded JumpServer.
+</Step>
+
+</Steps>

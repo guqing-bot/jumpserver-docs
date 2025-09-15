@@ -1,0 +1,184 @@
+---
+title: "RemoteApp machine"
+---
+
+**RemoteApp machine** is a Windows host used to deploy RemoteApp services and install remote applications. Users can access and use the applications on this host remotely, enabling centralized management and remote usage.
+
+**Tinker** is a tool provided by JumpServer for automating the deployment of RemoteApp services and publishing remote applications.  When a user connects to a remote application, Tinker is also responsible for launching the application and performing auto-fill operations. Tinker is automatically installed by JumpServer during the deployment of the publishing machine.
+
+## Prerequisites
+
+The RemoteApp machine must meet the following requirements:
+
+- Running Windows Server 2019 Standard or Datacenter operating system.
+- At least 4 CPU cores and 8 GB of RAM.
+- OpenSSH or WinRM is installed and configured.
+- Remote Desktop Services (RDS) license is installed and activated.
+- Network access to JumpServer over HTTP/HTTPS is available.
+
+## Create a RemoteApp machine
+
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+In the left menu, click **RemoteApp**.
+</Step>
+
+<Step>
+On the right page, click **RemoteApp machine** tab.
+</Step>
+
+<Step>
+Above the table, click **+ Create**.
+</Step>
+
+<Step>
+In the **Name** field, type RemoteApp machine’s name.
+</Step>
+
+<Step>
+In the **IP/Host** field, type the IP address or hostname.
+</Step>
+
+<Step>
+In the **Protocols** field, set the protocol and port.
+- `rdp` is required for users to connect to the RemoteApp.
+- `ssh` requires the OpenSSH service to be installed on the machine.
+- `winrm` requires the WinRM service to be installed on the machine.
+
+You must select either ssh or winrm, as JumpServer uses them to manage the RemoteApp machine, including initial deployment and RemoteApp publishing.
+
+</Step>
+
+<Step>
+In the **Accounts** field, add an account to manage the machine. It must meet the following requirements:
+- The account is a member of the Windows Administrators group.
+- Privileged is enabled.
+</Step>
+
+<Step>
+Optionally, check **Using same account** to enable login with the same username. 
+
+When the user connects to a RemoteApp , JumpServer will prioritize using a user with the same username to log in RemoteApp machine. This is especially useful when both JumpServer and the RemoteApp machine are integrated with the same AD/LDAP service.
+
+<Note>
+For this feature to work, you need to set `CACHE_LOGIN_PASSWORD_ENABLED=true` in the `config.txt` file and restart the service.
+</Note>
+
+</Step>
+
+<Step>
+Optionally, check **Auto create accounts** to generate two types of accounts automatically:
+
+- `js_`  Private accounts use the prefix js_ followed by the user’s username.
+- `jms_` Public accounts use the prefix jms_ followed by a random string.
+
+When a user connects to a RemoteApp, the system first tries to log in to the RemoteApp machine using the `js_` account, which is private and unique to the user.
+If the RemoteApp on that machine doesn't support concurrent sessions for the same user, the system will instead use a random public `jms_` account.
+
+</Step>
+
+<Step>
+Optionally, set **Accounts Create Amount** to specify the number of public `jms_` accounts.
+</Step>
+
+<Step>
+In the **Core API** field, type the JumpServer IP address or hostname.
+</Step>
+
+<Step>
+Optionally, check **Ignore certificate verification** to specify whether to ignore the certificate when Tinker accesses Core API.
+</Step>
+
+<Step>
+Optionally, check **Existing RDS license** to use your own license. If unchecked, a 120-day trial license will be used. For more information, see [RDS licensing documentation](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-client-access-license).
+
+<Steps stepLevel="2">
+  <Step>
+  In the **RDS license server** field, type the RDS license server address.
+
+  </Step>
+
+  <Step>
+  In the **RDS licensing mode** field, choose the licensing mode.
+  </Step>
+
+  <Step>
+  In the **RDS single session per user** field, set whether each user is allowed to have only one RDS session. If enabled, when a user connects a second session, the first session will be disconnected.
+  </Step>
+
+  <Step>
+  In the **RDS max disconnection time (ms)** field, defines the maximum amount of time (in milliseconds) a disconnected session remains active.
+  </Step>
+
+  <Step>
+  In the **RDS remote app logoff time limit (ms)** field, specifies how long the system waits before logging off a user after all RemoteApp programs are closed.
+
+  </Step>
+
+</Steps>
+</Step>
+
+<Step>
+Optionally, in the **Zone** field, select only one zone.
+</Step>
+
+<Step>
+Check **Active** to enable this RemoteApp machine.
+</Step>
+
+<Step>
+Optionally, type a description for this machine.
+</Step>
+
+<Step>
+Click **Submit** or **Save & Continue**.
+</Step>
+
+</Steps>
+
+## Deploy the RemoteApp machine
+
+<Steps>
+
+<Step>
+In the right area of the top navigation bar, click <Icon icon="settings" />.
+
+<Frame>
+<img src="/images/docs/navs/nav-settings.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+In the left menu, click **RemoteApp**.
+</Step>
+
+<Step>
+On the right page, click **RemoteApp machine** tab.
+</Step>
+
+<Step>
+In the table, find the RemoteApp machine and click its name.
+</Step>
+
+<Step>
+On the details page, click the **Deploy publishing machine** tab.
+</Step>
+
+<Step>
+In the "Quick Update" card on the right, find "Initialization deployment" and click **Deploy**. This will start a task to initialize the deployment of the RemoteApp machine and publish all RemoteApp.
+</Step>
+
+<Step>
+In the table on the left, you can view the deployment history and deployment logs.
+</Step>
+
+</Steps>

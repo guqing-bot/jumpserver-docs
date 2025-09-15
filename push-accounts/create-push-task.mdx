@@ -1,0 +1,103 @@
+---
+title: "Create push account task"
+---
+
+**Account push** means sending local account information from the JumpServer to remote hosts automatically.
+This helps create or update accounts on multiple hosts without manual login.
+Pushed content includes account name, password or private key.
+
+Before starting account push, create a high-privilege account for the asset. JumpServer uses this account to create other accounts during task execution.
+
+<Steps>
+
+<Step>
+At the top-left of the page, select <Icon icon="arrow-left-right" />, then click <Icon icon="lock-keyhole" /> **PAM**.
+
+<Frame>
+<img src="/images/docs/navs/nav-pam.png" alt="image" width="300"/>
+</Frame>
+</Step>
+
+<Step>
+In the left menu, click **<Icon icon="send" /> Push accounts**.
+</Step>
+
+<Step>
+On the right page, click the **Account push tasks** tab.
+</Step>
+
+<Step>
+Click **+ Create**.
+</Step>
+
+<Step>
+In the **Name** field, type the task name.
+</Step>
+
+<Step>
+Optionally. In the **Nodes** field, select one or more nodes. The task will execute account push on all assets under the selected nodes and their subnodes.
+</Step>
+
+<Step>
+Optionally. In the **Assets** field, select one or more assets.
+</Step>
+
+<Step>
+In the **Accounts** field, type one or more account usernames to push to the assets.
+<Note>
+If the account exists on the asset, its secret will be used. Otherwise, the account will be created using the task’s secret strategy and pushed.
+</Note>
+</Step>
+
+<Step>
+In the **Secret strategy** field, you can choose "Specific secret" to set it manually, or "Random generate" to generate it randomly.
+</Step>
+
+<Step>
+In the **Secret type** field, you can choose either "Password" or "SSH key".
+</Step>
+
+<Step>
+In the **Password** field, type a password. (Specific secret & Password) 
+</Step>
+
+<Step>
+In the **Private key** field, paste your private key. (Specific secret & SSH key)
+</Step>
+
+<Step>
+In the **Key password** field, type the private key password. (Specific secret & SSH key)
+</Step>
+
+<Step>
+In the **Password rules** field, set password rules, including length, uppercase and lowercase letters, numbers, special characters, and excluded characters. (Random generate & Password) 
+</Step>
+
+<Step>
+In the **Push parameters** field, you can configure push parameters.
+<Note>
+You can configure push parameters only when a Host-type asset or a node containing Host-type assets is selected.
+</Note>
+</Step>
+
+<Step>
+In the **Periodic** field, check to enable scheduled execution.
+</Step>
+
+<Step>
+In the **Check connection after change** field, check to verify the connection after the push task is completed.
+</Step>
+
+<Step>
+In the **Active** field, check to enable the task.
+</Step>
+
+<Step>
+In the **Description** field, type the task description.
+</Step>
+    
+<Step>
+Click **Submit**.
+</Step>
+
+</Steps>

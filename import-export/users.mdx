@@ -1,0 +1,85 @@
+---
+title: "User attributes description"
+---
+
+This topic describes the attributes related to user import.
+
+<ParamField path="ID" type="UUID">
+  Length of 36. Required only during import update.
+</ParamField>
+
+<ParamField path="Name" type="string" required>
+  Max length 128.
+</ParamField>
+
+<ParamField path="Username" type="string" required>
+  Max length 128.
+</ParamField>
+
+<ParamField path="Email" type="string" required>
+  Max length 128.
+</ParamField>
+
+<ParamField path="Password setting" type="string">
+  Options: email (User sets password via email), custom (Custom password will be set).
+</ParamField>
+
+<ParamField path="Password" type="string">
+  Max length 128.
+</ParamField>
+
+<ParamField path="Public Key" type="string">
+  Public key for SSH authentication.
+</ParamField>
+
+<ParamField path="Source" type="string">
+  Options: local, ldap, ldap_ha, openid, radius, cas, saml2, oauth2, wecom, dingtalk, lark, slack, feishu, custom.
+</ParamField>
+
+<ParamField path="MFA" type="string">
+  Options: 0 (Disabled), 1 (Enabled), 2 (Force enabled).
+</ParamField>
+
+<ParamField path="Groups" type="string[]">
+  Example: ["GroupID", ...]
+</ParamField>
+
+<ParamField path="Org Roles" type="string[]">
+  Example: ["OrgRoleID", ...]
+</ParamField>
+
+<ParamField path="System Roles" type="string[]">
+  Example: ["SystemRoleID", ...]
+</ParamField>
+
+<ParamField path="Tags" type="string[]">
+  Example: ["TagName:TagValue", ...]. If the label does not exist, it will be created automatically.
+</ParamField>
+
+<ParamField path="WeChat" type="string">
+  Max length 256.
+</ParamField>
+
+<ParamField path="Phone" type="string">
+  Phone number.
+</ParamField>
+
+<ParamField path="Need update password" type="boolean">
+  Yes/No
+</ParamField>
+
+<ParamField path="Active" type="boolean">
+  Yes/No
+</ParamField>
+
+<ParamField path="Date expired" type="string">
+  Format: YYYY/MM/DD HH:mm:ss +0000
+</ParamField>
+
+<ParamField path="Updated By" type="string">
+  Max length 30.
+</ParamField>
+
+<ParamField path="Description" type="string">
+  User description.
+</ParamField>
