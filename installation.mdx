@@ -4,12 +4,16 @@ title: "Installation"
 
 This topic describes how to install JumpServer, including both the open-source and enterprise editions.
 
-<Card id="1760437277455" title="New Card" icon="crown" iconType="regular" color="#eab308" target="_blank" imageFit="auto-height" horizontal>
-  Try JumpServer Enterprise free for 14 days -- <a href="mailto:sales@lxware.hk">
-  
-  Contact us <Icon icon="send" /></a>
-
-  to get started !
+<Card
+  title="Contact us to get started !"
+  icon="crown"
+  iconType="regular"
+  color="#eab308"
+  href="mailto:sales@lxware.hk"
+  cta="Contact us"
+  arrow="true"
+>
+  Try JumpServer Enterprise free for 14 days
 </Card>
 
 ## Install with a one-line command
@@ -32,6 +36,7 @@ This section introduces how to install the open-source version of JumpServer usi
     ```sh
     curl -sSL https://github.com/jumpserver/jumpserver/releases/latest/download/quick_start.sh | bash
     ```
+
   </Step>
   <Step iconType="regular">
     After the installation is complete, open your Chrome browser and enter `http://<your-server-ip>` in the address bar.
@@ -39,6 +44,7 @@ This section introduces how to install the open-source version of JumpServer usi
     <Note>
       Replace `<your-server-ip>` with your actual server IP address.
     </Note>
+
   </Step>
   <Step iconType="regular">
     Log in as an Administrator using the following default credentials.
@@ -46,6 +52,7 @@ This section introduces how to install the open-source version of JumpServer usi
     * username: `admin`
 
     * password: `ChangeMe`
+
   </Step>
   <Step iconType="regular">
     For security, you will be prompted to change your password after logging in. Once you've changed it and logged in again, you can start your JumpServer journey.
@@ -72,7 +79,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
   <Step iconType="regular">
     Download the JumpServer Enterprise offline installation package.
 
-    <Tabs>  
+    <Tabs>
       <Tab title="web">
         1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
 
@@ -96,6 +103,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
         </Note>
       </Tab>
     </Tabs>
+
   </Step>
   <Step iconType="regular">
     Extract the offline installation package.
@@ -103,6 +111,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     ```sh
     tar -zxvf jumpserver-ee-v4.10.7-x86_64.tar.gz
     ```
+
   </Step>
   <Step iconType="regular">
     Change to the extracted directory.
@@ -110,6 +119,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     ```sh
     cd jumpserver-ee-v4.10.7-x86_64
     ```
+
   </Step>
   <Step iconType="regular">
     Perform the installation, the installation process can be completed using all default options. After the installation is complete, you can adjust the settings by modifying the configuration files.
@@ -117,6 +127,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     ```sh
     ./jmsctl.sh install
     ```
+
   </Step>
   <Step iconType="regular">
     After the installation is complete, running `docker ps` will show the following three containers running:
@@ -126,6 +137,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     * jms_postgresql
 
     * jms_redis
+
   </Step>
   <Step iconType="regular">
     Start all services.
@@ -133,6 +145,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     ```sh
     ./jmsctl.sh start
     ```
+
   </Step>
   <Step iconType="regular">
     Open your Chrome browser, enter `http://<your-server-ip>` in the address bar.
@@ -140,6 +153,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     <Note>
       Replace `<your-server-ip>` with your actual server IP address.
     </Note>
+
   </Step>
   <Step iconType="regular">
     Log in as an Administrator using the following default credentials.
@@ -147,6 +161,7 @@ This section describes how to install the Enterprise Edition of JumpServer using
     * username: `admin`
 
     * password: `ChangeMe`
+
   </Step>
   <Step iconType="regular">
     For security, you will be prompted to change your password after logging in. Once you've changed it and logged in again, you can start your JumpServer journey.
@@ -158,8 +173,8 @@ This section describes how to install the Enterprise Edition of JumpServer using
 
 ## Next steps
 
-* [Import License](/docs/system-settings/license): Learn how to import the enterprise edition license.
+- [Import License](/docs/system-settings/license): Learn how to import the enterprise edition license.
 
-* [Enable HTTPS](/docs/enable-https): Learn how to enable HTTPS.
+- [Enable HTTPS](/docs/enable-https): Learn how to enable HTTPS.
 
-* [Upgrade JumpServer](/docs/upgrade): Learn how to upgrade JumpServer.
+- [Upgrade JumpServer](/docs/upgrade): Learn how to upgrade JumpServer.
