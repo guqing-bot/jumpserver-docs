@@ -4,8 +4,12 @@ title: "Installation"
 
 This topic describes how to install JumpServer, including both the open-source and enterprise editions.
 
-<Card icon="crown" color="#eab308" horizontal>
-  Try JumpServer Enterprise free for 14 days -- <a href="mailto:sales@lxware.hk">Contact us <Icon icon="send" /></a> to get started !
+<Card id="1760437277455" title="New Card" icon="crown" iconType="regular" color="#eab308" target="_blank" imageFit="auto-height" horizontal>
+  Try JumpServer Enterprise free for 14 days -- <a href="mailto:sales@lxware.hk">
+  
+  Contact us <Icon icon="send" /></a>
+
+  to get started !
 </Card>
 
 ## Install with a one-line command
@@ -13,151 +17,149 @@ This topic describes how to install JumpServer, including both the open-source a
 This section introduces how to install the open-source version of JumpServer using a one-line command.
 
 <Steps>
+  <Step iconType="regular">
+    Prepare a clean Linux server ( 64bit, >= 4c8g ).
+  </Step>
+  <Step iconType="regular">
+    Log in to the Linux server using the "root" or another user with superuser privileges.
+  </Step>
+  <Step iconType="regular">
+    Change to the `/opt` directory.
+  </Step>
+  <Step iconType="regular">
+    Run the command to install the latest open-source version of JumpServer.
 
-<Step>
-Prepare a clean Linux server ( 64bit, >= 4c8g ).
-</Step>
+    ```sh
+    curl -sSL https://github.com/jumpserver/jumpserver/releases/latest/download/quick_start.sh | bash
+    ```
+  </Step>
+  <Step iconType="regular">
+    After the installation is complete, open your Chrome browser and enter `http://<your-server-ip>` in the address bar.
 
-<Step>
-Log in to the Linux server using the "root" or another user with superuser privileges.
-</Step>
+    <Note>
+      Replace `<your-server-ip>` with your actual server IP address.
+    </Note>
+  </Step>
+  <Step iconType="regular">
+    Log in as an Administrator using the following default credentials.
 
-<Step>
-Change to the `/opt` directory.
-</Step>
+    * username: `admin`
 
-<Step>
-Run the command to install the latest open-source version of JumpServer.
-```sh
-curl -sSL https://github.com/jumpserver/jumpserver/releases/latest/download/quick_start.sh | bash
-```
-</Step>
-
-<Step>
-After the installation is complete, open your Chrome browser and enter "http://\<your-server-ip\>" in the address bar.
-<Note>
-Replace `<your-server-ip>` with your actual server IP address.
-</Note>
-</Step>
-
-<Step>
-Log in as an Administrator using the following default credentials.
-* username: `admin`
-* password: `ChangeMe`
-</Step>
-
-<Step>
-For security, you will be prompted to change your password after logging in. Once you've changed it and logged in again, you can start your JumpServer journey.
-</Step>
-
-<Step>
-At this point, you have successfully installed JumpServer. 
-</Step>
-
+    * password: `ChangeMe`
+  </Step>
+  <Step iconType="regular">
+    For security, you will be prompted to change your password after logging in. Once you've changed it and logged in again, you can start your JumpServer journey.
+  </Step>
+  <Step iconType="regular">
+    At this point, you have successfully installed JumpServer.
+  </Step>
 </Steps>
 
 ## Install with an offline package
-This section describes how to install the Enterprise Edition of JumpServer using an offline package. 
+
+This section describes how to install the Enterprise Edition of JumpServer using an offline package.
 
 <Steps>
+  <Step iconType="regular">
+    Prepare a clean Linux server ( 64bit, >= 4c8g ).
+  </Step>
+  <Step iconType="regular">
+    Log in to the Linux server using the "root" or another user with superuser privileges.
+  </Step>
+  <Step iconType="regular">
+    Change to the `/opt` directory.
+  </Step>
+  <Step iconType="regular">
+    Download the JumpServer Enterprise offline installation package.
 
-<Step>
-Prepare a clean Linux server ( 64bit, >= 4c8g ).
-</Step>
+    <Tabs>  
+      <Tab title="web">
+        1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
 
-<Step>
-Log in to the Linux server using the "root" or another user with superuser privileges.
-</Step>
+        2. Click filename to download the offline installation package for the required version.
 
-<Step>
-Change to the `/opt` directory.
-</Step>
+        3. Upload the offline installation package to the `/opt` directory on the deployment server.
+      </Tab>
+      <Tab title="wget">
+        1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
 
-<Step>
-Download the JumpServer Enterprise offline installation package.
+        2. Right-click filename and select "Copy link address" to copy the download link for the required version of the offline installation package.
 
-<Tabs>
-  <Tab title="web">
-    1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
-    2. Click filename to download the offline installation package for the required version.
-    3. Upload the offline installation package to the `/opt` directory on the deployment server.
-  
-  </Tab>
+        3. Replace the download link and run the following command to download the offline installation package.
 
-  <Tab title="wget">
-    1. Log in to https://download-pkgs.jumpserver.com using the username and password provided by the support team.
-    2. Right-click filename and select "Copy link address" to copy the download link for the required version of the offline installation package.
-    3. Replace the download link and run the following command to download the offline installation package.
+        ```sh
+        cd /opt && wget --user={username} --password={password} -O jumpserver-ee-v4.10.7-x86_64.tar.gz "https://download-pkgs.jumpserver.com/download?file=jumpserver-ee-v4.10.7-x86_64.tar.gz"
+        ```
+
+        <Note>
+          Replace `{username}` and `{password}` with the actual username and password provided by the support team.
+        </Note>
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step iconType="regular">
+    Extract the offline installation package.
+
     ```sh
-    cd /opt && wget --user={username} --password={password} -O jumpserver-ee-v4.10.7-x86_64.tar.gz "https://download-pkgs.jumpserver.com/download?file=jumpserver-ee-v4.10.7-x86_64.tar.gz"
+    tar -zxvf jumpserver-ee-v4.10.7-x86_64.tar.gz
     ```
+  </Step>
+  <Step iconType="regular">
+    Change to the extracted directory.
+
+    ```sh
+    cd jumpserver-ee-v4.10.7-x86_64
+    ```
+  </Step>
+  <Step iconType="regular">
+    Perform the installation, the installation process can be completed using all default options. After the installation is complete, you can adjust the settings by modifying the configuration files.
+
+    ```sh
+    ./jmsctl.sh install
+    ```
+  </Step>
+  <Step iconType="regular">
+    After the installation is complete, running `docker ps` will show the following three containers running:
+
+    * jms_core
+
+    * jms_postgresql
+
+    * jms_redis
+  </Step>
+  <Step iconType="regular">
+    Start all services.
+
+    ```sh
+    ./jmsctl.sh start
+    ```
+  </Step>
+  <Step iconType="regular">
+    Open your Chrome browser, enter `http://<your-server-ip>` in the address bar.
+
     <Note>
-    Replace `{username}` and `{password}` with the actual username and password provided by the support team.
+      Replace `<your-server-ip>` with your actual server IP address.
     </Note>
-  </Tab>
-</Tabs>
+  </Step>
+  <Step iconType="regular">
+    Log in as an Administrator using the following default credentials.
 
-</Step>
+    * username: `admin`
 
-<Step>
-Extract the offline installation package.
-```sh 
-tar -zxvf jumpserver-ee-v4.10.7-x86_64.tar.gz
-```
-</Step>
-
-<Step>
-Change to the extracted directory.
-```sh
-cd jumpserver-ee-v4.10.7-x86_64
-```
-</Step>
-
-<Step>
-Perform the installation, the installation process can be completed using all default options. After the installation is complete, you can adjust the settings by modifying the configuration files.
-```sh
-./jmsctl.sh install
-```
-</Step>
-
-<Step>
-After the installation is complete, running `docker ps` will show the following three containers running:
-* jms_core
-* jms_postgresql
-* jms_redis
-</Step>
-
-<Step>
-Start all services.
-```sh
-./jmsctl.sh start
-```
-</Step>
-
-<Step>
-Open your Chrome browser, enter "http://\<your-server-ip\>" in the address bar.
-<Note>
-Replace `<your-server-ip>` with your actual server IP address.
-</Note>
-</Step>
-
-<Step>
-Log in as an Administrator using the following default credentials.
-* username: `admin`
-* password: `ChangeMe`
-</Step>
-
-<Step>
-For security, you will be prompted to change your password after logging in. Once you've changed it and logged in again, you can start your JumpServer journey.
-</Step>
-
-<Step>
-At this point, you have successfully installed JumpServer. 
-</Step>
+    * password: `ChangeMe`
+  </Step>
+  <Step iconType="regular">
+    For security, you will be prompted to change your password after logging in. Once you've changed it and logged in again, you can start your JumpServer journey.
+  </Step>
+  <Step iconType="regular">
+    At this point, you have successfully installed JumpServer.
+  </Step>
 </Steps>
 
 ## Next steps
 
 * [Import License](/docs/system-settings/license): Learn how to import the enterprise edition license.
+
 * [Enable HTTPS](/docs/enable-https): Learn how to enable HTTPS.
+
 * [Upgrade JumpServer](/docs/upgrade): Learn how to upgrade JumpServer.

@@ -4,56 +4,56 @@ description: "This topic describes how to upgrade JumpServer, including both the
 ---
 
 <Note>
-We recommend upgrading JumpServer regularly to access the latest designs and features.
+  We recommend upgrading JumpServer regularly to access the latest designs and features.
 </Note>
 
 ## Upgrade for one-line installation
 
 If you have installed JumpServer using the [Install with a one-line command](/docs/installation#install-with-a-one-line-command) guide, you can upgrade JumpServer by running the following steps.
 
-<Steps>  
-  <Step title="步骤">
+<Steps>
+  <Step>
     Log in to the JumpServer deployment server using the "root" or another user with superuser privileges.
   </Step>
-  <Step title="步骤">
+  <Step>
     Change to the `/opt` directory.
   </Step>
-  <Step title="步骤">
+  <Step>
     Download the latest installation package.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     wget https://github.com/jumpserver/installer/releases/download/v4.10.7/jumpserver-installer-v4.10.7.tar.gz
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Extract the installation package.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     tar -zxvf jumpserver-installer-v4.10.7.tar.gz
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Change to the extracted directory.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     cd jumpserver-installer-v4.10.7
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Perform the upgrade.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     ./jmsctl.sh upgrade
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Start all services.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     ./jmsctl.sh start
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     At this point, you have successfully upgraded JumpServer.
   </Step>
 </Steps>
@@ -62,14 +62,14 @@ If you have installed JumpServer using the [Install with a one-line command](/do
 
 If you have installed JumpServer using the [Install with an offline package](/docs/installation#install-with-an-offline-package) guide, you can upgrade JumpServer by running the following steps.
 
-<Steps>  
-  <Step title="步骤">
+<Steps>
+  <Step>
     Log in to the JumpServer deployment server using the "root" or another user with superuser privileges.
   </Step>
-  <Step title="步骤">
+  <Step>
     Change to the `/opt` directory.
   </Step>
-  <Step title="步骤">
+  <Step>
     Download the JumpServer Enterprise offline installation package.
 
     <Tabs>  
@@ -87,47 +87,46 @@ If you have installed JumpServer using the [Install with an offline package](/do
 
         3. Replace the download link and run the following command to download the offline installation package.
 
-        ```sh theme="github-light" dark-theme="github-dark"
+        ```sh
         cd /opt && wget --user={username} --password={password} -O jumpserver-ee-v4.10.7-x86_64.tar.gz "https://download-pkgs.jumpserver.com/download?file=jumpserver-ee-v4.10.7-x86_64.tar.gz"
         ```
 
         <Note>
-        Replace `{username}` and `{password}` with the actual username and password provided by the support team.
+          Replace `{username}` and `{password}` with the actual username and password provided by the support team.
         </Note>
       </Tab>
     </Tabs>
   </Step>
-  <Step title="步骤">
+  <Step>
     Extract the installation package.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     tar -zxvf jumpserver-ee-v4.10.7-x86_64.tar.gz
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Change to the extracted directory.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     cd jumpserver-ee-v4.10.7-x86_64
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Perform the upgrade, the upgrade process can be completed using all default options.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     ./jmsctl.sh upgrade
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     Start all services.
 
-    ```sh theme="github-light" dark-theme="github-dark"
+    ```sh
     ./jmsctl.sh start
     ```
   </Step>
-  <Step title="步骤">
+  <Step>
     At this point, you have successfully upgraded JumpServer.
   </Step>
 </Steps>
 
-3
