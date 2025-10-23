@@ -4,36 +4,44 @@ description: "Learn about JumpServer, an open-source Privileged Access Managemen
 ---
 
 <Note>
-JumpServer documentation is continually being updated. Please stay tuned for more details.
+  JumpServer documentation is continually being updated. Please stay tuned for more details.
 </Note>
 
 ## About JumpServer
 
 **JumpServer** is an open-source Privileged Access Management (PAM) platform that provides DevOps and IT teams with on-demand and secure access to SSH, RDP, Kubernetes, Remote Apps and Database endpoints through a web browser.
 
-<Frame>
-  <img src="/images/jumpserver-arch-light.png" alt="JumpServer Architecture Diagram" />
+<Frame caption="">
+  <img
+    src="/images/jumpserver-arch-light.png"
+    alt="JumpServer Architecture Diagram"
+    className="mx-auto"
+  />
 </Frame>
 
 ## About Components
 
 JumpServer is composed of multiple core components that work together to form its functional framework, providing users with comprehensive operation management and security control capabilities.
 
-| Component | Status | Description |
-|:---|:---|:---|
-| [Core](https://github.com/jumpserver/jumpserver) | <img src="https://img.shields.io/github/release/jumpserver/jumpserver.svg" alt="Core" className="m-0" /> | JumpServer Core |
-| [Lina](https://github.com/jumpserver/lina) | <img src="https://img.shields.io/github/release/jumpserver/lina.svg" alt="Lina" className="m-0" /> | JumpServer Web UI |
-| [Luna](https://github.com/jumpserver/luna) | <img src="https://img.shields.io/github/release/jumpserver/luna.svg" alt="Luna" className="m-0" /> | JumpServer Web Terminal |
-| [KoKo](https://github.com/jumpserver/koko) | <img src="https://img.shields.io/github/release/jumpserver/koko.svg" alt="KoKo" className="m-0" /> | JumpServer Character Protocol Connector |
-| [Lion](https://github.com/jumpserver/lion) | <img src="https://img.shields.io/github/release/jumpserver/lion.svg" alt="Lion" className="m-0" /> | JumpServer Graphical Protocol Connector |
-| [Chen](https://github.com/jumpserver/chen) | <img src="https://img.shields.io/github/release/jumpserver/chen.svg" alt="Chen" className="m-0" /> | JumpServer Web DB |
-| Tinker | <img src="https://img.shields.io/badge/release-private-red" alt="Tinker" className="m-0" /> | JumpServer Remote Application Connector (Windows) |
-| Panda | <img src="https://img.shields.io/badge/release-private-red" alt="Panda" className="m-0" /> | <Icon icon="crown" color="#eab308"/> JumpServer EE Remote Application Connector (Linux) |
-| Razor | <img src="https://img.shields.io/badge/release-private-red" alt="Razor" className="m-0" /> | <Icon icon="crown" color="#eab308"/> JumpServer EE RDP Proxy Connector |
-| Magnus | <img src="https://img.shields.io/badge/release-private-red" alt="Magnus" className="m-0" /> | <Icon icon="crown" color="#eab308"/> JumpServer EE Database Proxy Connector |
-| Nec | <img src="https://img.shields.io/badge/release-private-red" alt="Nec" className="m-0" /> | <Icon icon="crown" color="#eab308"/> JumpServer EE VNC Proxy Connector |
-| Facelive | <img src="https://img.shields.io/badge/release-private-red" alt="Facelive" className="m-0" /> | <Icon icon="crown" color="#eab308" /> JumpServer EE Facial Recognition |
+| Component                                        | Status| Description|
+| ------------------------------------------------ | --- | --- |
+| [Core](https://github.com/jumpserver/jumpserver) | <img   src="https://img.shields.io/github/release/jumpserver/jumpserver.svg"   alt="Core"   className="m-0 mx-auto" />| JumpServer Core|
+| [Lina](https://github.com/jumpserver/lina)       | <img   src="https://img.shields.io/github/release/jumpserver/lina.svg"   alt="Lina"   className="m-0 mx-auto" />| JumpServer Web UI|
+| [Luna](https://github.com/jumpserver/luna)       | <img   src="https://img.shields.io/github/release/jumpserver/luna.svg"   alt="Luna"   className="m-0 mx-auto" />| JumpServer Web Terminal|
+| [KoKo](https://github.com/jumpserver/koko)       | <img   src="https://img.shields.io/github/release/jumpserver/koko.svg"   alt="KoKo"   className="m-0 mx-auto" />| JumpServer Character Protocol Connector|
+| [Lion](https://github.com/jumpserver/lion)       | <img   src="https://img.shields.io/github/release/jumpserver/lion.svg"   alt="Lion"   className="m-0 mx-auto" />| JumpServer Graphical Protocol Connector|
+| [Chen](https://github.com/jumpserver/chen)       | <img   src="https://img.shields.io/github/release/jumpserver/chen.svg"   alt="Chen"   className="m-0 mx-auto" />| JumpServer Web DB|
+| Tinker                                           | <img   src="https://img.shields.io/badge/release-private-red"   alt="Tinker"   className="m-0 mx-auto" />| JumpServer Remote Application Connector (Windows)|
+| Panda                                            | <img   src="https://img.shields.io/badge/release-private-red"   alt="Panda"   className="m-0 mx-auto" />| <Icon icon="crown" color="#eab308" /> JumpServer EE Remote Application Connector (Linux)|
+| Razor                                            | <img   src="https://img.shields.io/badge/release-private-red"   alt="Razor"   className="m-0 mx-auto" />| <Icon icon="crown" color="#eab308" /> JumpServer EE RDP Proxy Connector|
+| Magnus                                           | <img   src="https://img.shields.io/badge/release-private-red"   alt="Magnus"   className="m-0 mx-auto" />| <Icon icon="crown" color="#eab308" /> JumpServer EE Database Proxy Connector|
+| Nec                                              | <img   src="https://img.shields.io/badge/release-private-red"   alt="Nec"   className="m-0 mx-auto" />| <Icon icon="crown" color="#eab308" /> JumpServer EE VNC Proxy Connector|
+| Facelive                                         | <img   src="https://img.shields.io/badge/release-private-red"   alt="Facelive"   className="m-0 mx-auto" />| <Icon icon="crown" color="#eab308" /> JumpServer EE Facial Recognition|
 
 <Callout icon="crown" color="#eab308">
-Enterprise Edition components are available with a commercial license.
+  Enterprise Edition components are available with a commercial license.
 </Callout>
+
+import { ColorGenerator } from "/snippets/color-generator.jsx"
+
+<ColorGenerator />
